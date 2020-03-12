@@ -1,1 +1,97 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@font-face {
+  font-family: 'montserrat';
+  font-weight: 100;
+  font-style: normal;
+  src: url(assets/fonts/montserrat/Montserrat-Thin.otf) format("truetype");
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-weight: 200;
+  font-style: normal;
+  src: url(assets/fonts/montserrat/Montserrat-Regular.otf) format("truetype");
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-weight: 300;
+  font-style: normal;
+  src: url(assets/fonts/montserrat/Montserrat-SemiBold.otf) format("truetype");
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-weight: 400;
+  font-style: normal;
+  src: url(assets/fonts/montserrat/Montserrat-Medium.otf) format("truetype");
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-weight: 500;
+  font-style: normal;
+  src: url(assets/fonts/montserrat/Montserrat-Bold.otf) format("truetype");
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-weight: 600;
+  font-style: normal;
+  src: url(assets/fonts/montserrat/Montserrat-SemiBold.otf) format("truetype");
+}
+
+@font-face {
+  font-family: 'montserrat';
+  font-weight: 700;
+  font-style: normal;
+  src: url(assets/fonts/montserrat/Montserrat-ExtraBold.otf) format("truetype");
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'montserrat'  !important;}
+
+*{
+  font-family: 'montserrat' !important;
+}
+
+.material-icons{
+  font-family: 'Material Icons' !important;
+}
+
+//Global Items
+
+.mat-grid-tile .mat-figure {
+ // justify-content: flex-start !important ;
+  align-items: flex-start !important;
+}
+
+.mat-form-field:not(.mat-form-field-has-label) .mat-form-field-infix {
+  border-top-width: 0;
+  border-bottom-width: 0;
+  padding-bottom: 1em;
+}
+
+.mat-display-2{
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+
+.mat-display-2{
+  color: #2E3943;
+}
+.mat-headline{
+  color: #2E3943;
+}
+.mat-title{
+  color: #2E3943;
+}
+.mat-body-2{
+  color: #2E3943;
+}

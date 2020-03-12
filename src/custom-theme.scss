@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$tradebrics-app-primary: mat-palette($mat-blue-grey);
+$tradebrics-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+
+$tradebrics-app-warn:    mat-palette($mat-red);
+
+$tradebrics-app-theme: mat-light-theme($tradebrics-app-primary, $tradebrics-app-accent, $tradebrics-app-warn);
+
+@include angular-material-theme($tradebrics-app-theme);

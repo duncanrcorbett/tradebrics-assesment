@@ -1,0 +1,244 @@
+<app-header></app-header>
+
+<mat-grid-list cols="2" class="myGridList" rowHeight="100em">
+  <mat-grid-tile colspan="2">
+
+    <div class="panel">
+      <form class="registerForm" name="registerForm" [formGroup]="registerForm">
+
+
+      <h1 class="mat-display-2">Register you business </h1>
+      <h2 class="mat-headline">Lets get started</h2>
+
+      <div class="full-input">
+        <p class="mat-body-2">image or Logo</p>
+        <button multiple (click)="uploadImage($event)" class="image-button" mat-raised-button  color="light"><span class="logo-help">A logo helps personalize you account</span><mat-icon class="photo-icon">add_a_photo</mat-icon>
+        </button>
+
+        <button class="image-display" mat-fab disabled><mat-icon [inline]="true" class="display-icon">photo</mat-icon></button>
+
+        <p class="mat-title">General information</p>
+      </div>
+
+
+      <mat-grid-list cols="2" class="myGridList" rowHeight="5.5em" gutterSize="1.5em">
+
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+    <p class="mat-body-2">Business name*</p>
+    <mat-form-field class="input-box" color="warn" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+      <input color="accent" matInput placeholder="Business name" required formControlName="businessName">
+    </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile colspan="1" >
+          <div class="panel-form">
+  <p class="mat-body-2 input-label">Legal business name*</p>
+  <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+    <input color="accent" matInput placeholder="Legal business name" required formControlName="legalBusinessName">
+  </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Business country*</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <mat-select placeholder="Select a country"  required formControlName="country">
+                <mat-option value="South Africa">
+                South Africa
+                </mat-option>
+                <mat-option value="Zimbabwe">
+                  Zimbabwe
+                </mat-option>
+                <mat-option value="Kenya">
+                  Kenya
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Business entity*</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <mat-select placeholder="Select an entity"  required formControlName="businessEntity">
+                <mat-option value="Entity 1">
+                  Entity 1
+                </mat-option>
+                <mat-option value="Entity 2">
+                  Entity 2
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Business registration*</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <input color="accent" matInput placeholder="Number" required formControlName="businessRegistration" type="number">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Business VAT*</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <input color="accent" matInput placeholder="VAT" required formControlName="businessVAT" type="number">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="2" rowspan="1.5" >
+          <div class="panel-form">
+            <p class="mat-body-2">Business Overview</p>
+            <mat-form-field class="text-box" appearance="outline">
+              <textarea class="text-area" matInput placeholder="What do you do?"   formControlName="businessOverview"></textarea>
+              <mat-hint>Use 20 or more characters</mat-hint>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+
+      <mat-grid-list cols="2" class="myGridList" rowHeight="3em" gutterSize="1.5em" style="margin-top: -2em">
+        <mat-grid-tile colspan="2">
+          <div class="panel-form">
+            <p class="mat-title">Contact information</p>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="5" class="myGridList" rowHeight="5.5em" gutterSize="1.5em">
+        <mat-grid-tile colspan="2">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Business email*</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <input color="accent" matInput placeholder="Business email" required formControlName="businessEmail">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Telephone</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" value="+27">
+              <mat-select formControlName="TelephoneArea" value="+27" [(value)]="selected" placeholder="+00">
+                <mat-option value="+27">
+                  <img class="flag-img" width="25" src="assets/images/flag-400.png">
+                  +27
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="2">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label" style="color: transparent">number</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <input color="accent" matInput placeholder="000 000 0000" formControlName="TelephoneNumber" type="number">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" class="myGridList" rowHeight="3em" gutterSize="1.5em" style="margin-top: 2em">
+        <mat-grid-tile colspan="2">
+          <div class="panel-form">
+            <p class="mat-title">Physical address</p>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" class="myGridList" rowHeight="5.5em" gutterSize="1.5em">
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">City</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <mat-select placeholder="Select a city" formControlName="city">
+                <mat-option value="Johannesburg">
+                  Johannesburg
+                </mat-option>
+                <mat-option value="Pretoria">
+                  Pretoria
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Suburb</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <mat-select  placeholder="Select a suburb" formControlName="suburb">
+                <mat-option value="Honeydew">
+                  Honeydew
+                </mat-option>
+                <mat-option value="Sandton">
+                  Sandton
+                </mat-option>
+                <mat-option value="Fourways">
+                  Fourways
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Street address</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <input color="accent" matInput placeholder="Street address" formControlName="street">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Apt / Suite / Other</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <input color="accent" matInput placeholder="Apt / Suite / Other" formControlName="appSuiteOther">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <p class="mat-body-2 input-label">Postal Zip Code</p>
+            <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
+              <input color="accent" matInput placeholder="Postal / Zip Code" formControlName="postal" type="number">
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+        <mat-grid-list cols="2" class="myGridList" rowHeight="5.5em" gutterSize="1.5em" style="margin-top: 5em">
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <button class="register-button cancel" mat-stroked-button color="accent" routerLink="/" (click)="cancel($event)">Cancel</button>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile colspan="1">
+          <div class="panel-form">
+            <button class="register-button" mat-flat-button color="accent" [disabled]="registerForm.invalid">Confirm</button>
+          </div>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+
+      </form>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

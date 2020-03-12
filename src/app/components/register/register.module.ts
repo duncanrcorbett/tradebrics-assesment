@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import {RegisterComponent} from './register.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatGridListModule} from '@angular/material';
+import {MatButtonModule, MatGridListModule, MatInputModule} from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import {HeaderComponent} from '../header/header.component';
 
 const routes: Routes = [
   {
@@ -18,10 +20,14 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-    MatInputModule,
     MatGridListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSelectModule
+
   ],
-  declarations: [RegisterComponent]
+  declarations: [RegisterComponent, HeaderComponent]
 })
 export class RegisterModule {}
