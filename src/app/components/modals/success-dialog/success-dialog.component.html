@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Success</h1>
+<div mat-dialog-content>
+  <p class="mat-body-2">Business Name: <span class="mat-body-3"> {{myData.businessName}}</span></p>
+  <p class="mat-body-2">Legal Business Name: <span class="mat-body-3"> {{myData.legalBusinessName}}</span></p>
+  <p class="mat-body-2">Business Entity: <span class="mat-body-3"> {{myData.businessEntity}}</span></p>
+  <p class="mat-body-2">Business Registration: <span class="mat-body-3"> {{myData.businessRegistration}}</span></p>
+  <p class="mat-body-2">Business VAT: <span class="mat-body-3"> {{myData.businessVAT}}</span></p>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button cdkFocusInitial (click)="close()">Ok</button>
+</div>

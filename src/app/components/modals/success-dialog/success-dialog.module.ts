@@ -2,18 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import {RegisterComponent} from './register.component';
 import {MatButtonModule, MatGridListModule, MatInputModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
-import {HeaderComponent} from '../header/header.component';
+
 import {MatDialogModule} from '@angular/material/dialog';
-import {SuccessModule} from '../modals/success-dialog/success-dialog.module';
+import {SuccessDialogComponent} from './success-dialog.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: RegisterComponent
+    path: 'success',
+    component: SuccessDialogComponent
   }
 ];
 
@@ -28,13 +27,9 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     MatSelectModule,
-    MatDialogModule,
-    SuccessModule
-
+    MatDialogModule
 
   ],
-  declarations: [RegisterComponent,
-    HeaderComponent
-    ]
+  declarations: [SuccessDialogComponent]
 })
-export class RegisterModule {}
+export class SuccessModule {}

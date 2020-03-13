@@ -1,30 +1,33 @@
 <app-header></app-header>
 
-<mat-grid-list cols="2" class="myGridList" rowHeight="100em">
+<mat-grid-list cols="2" class="myGridList" rowHeight="115em">
   <mat-grid-tile colspan="2">
 
     <div class="panel">
-      <form class="registerForm" name="registerForm" [formGroup]="registerForm">
+      <form class="registerForm" name="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
 
-      <h1 class="mat-display-2">Register you business </h1>
+      <h1 class="mat-display-2">Register your business </h1>
       <h2 class="mat-headline">Lets get started</h2>
 
-      <div class="full-input">
+
+
         <p class="mat-body-2">image or Logo</p>
-        <button multiple (click)="uploadImage($event)" class="image-button" mat-raised-button  color="light"><span class="logo-help">A logo helps personalize you account</span><mat-icon class="photo-icon">add_a_photo</mat-icon>
+        <button multiple (click)="uploadImage($event)" class="image-button" mat-raised-button  color="light"><span class="logo-help">{{imagelength()}}</span><mat-icon class="photo-icon">add_a_photo</mat-icon>
         </button>
 
-        <button class="image-display" mat-fab disabled><mat-icon [inline]="true" class="display-icon">photo</mat-icon></button>
+
+
+        <button *ngIf="!smallScreen" class="image-display" mat-fab disabled><mat-icon [inline]="true" class="display-icon">photo</mat-icon></button>
 
         <p class="mat-title">General information</p>
-      </div>
 
 
-      <mat-grid-list cols="2" class="myGridList" rowHeight="5.5em" gutterSize="1.5em">
+
+      <mat-grid-list cols="2" class="myGridList" rowHeight="5.5em" gutterSize="1.5em" (window:resize)="onResize($event)">
 
 
-        <mat-grid-tile colspan="1">
+        <mat-grid-tile colspan="{{colLength}}">
           <div class="panel-form">
     <p class="mat-body-2">Business name*</p>
     <mat-form-field class="input-box" color="warn" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
@@ -34,7 +37,7 @@
         </mat-grid-tile>
 
 
-        <mat-grid-tile colspan="1" >
+        <mat-grid-tile colspan="{{colLength}}" >
           <div class="panel-form">
   <p class="mat-body-2 input-label">Legal business name*</p>
   <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
@@ -43,7 +46,7 @@
           </div>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="1">
+        <mat-grid-tile colspan="{{colLength}}">
           <div class="panel-form">
             <p class="mat-body-2 input-label">Business country*</p>
             <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
@@ -62,7 +65,7 @@
           </div>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="1">
+        <mat-grid-tile colspan="{{colLength}}">
           <div class="panel-form">
             <p class="mat-body-2 input-label">Business entity*</p>
             <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
@@ -78,7 +81,7 @@
           </div>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="1">
+        <mat-grid-tile colspan="{{colLength}}">
           <div class="panel-form">
             <p class="mat-body-2 input-label">Business registration*</p>
             <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
@@ -87,7 +90,7 @@
           </div>
         </mat-grid-tile>
 
-        <mat-grid-tile colspan="1">
+        <mat-grid-tile colspan="{{colLength}}">
           <div class="panel-form">
             <p class="mat-body-2 input-label">Business VAT*</p>
             <mat-form-field class="input-box" color="primary" appearance="outline" floatLabel="auto" hideRequiredMarker color="primary" >
@@ -232,7 +235,7 @@
 
         <mat-grid-tile colspan="1">
           <div class="panel-form">
-            <button class="register-button" mat-flat-button color="accent" [disabled]="registerForm.invalid">Confirm</button>
+            <button class="register-button" type="submit" mat-flat-button color="accent" [disabled]="registerForm.invalid">Confirm</button>
           </div>
         </mat-grid-tile>
 
